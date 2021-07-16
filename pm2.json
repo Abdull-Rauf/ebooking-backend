@@ -1,0 +1,16 @@
+{
+    "apps": [
+        {
+            "name": "admin-backend",
+            "exec_mode": "cluster",
+            "instances": "2",
+            "script": "./src/server.ts",
+            "interpreter": "ts-node",
+            "node_args": "-r dotenv/config",
+            "env": {
+                "NODE_ENV": "prod",
+                "PORT": 4000
+            }
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+name: Server Health Test
+on:
+    workflow_dispatch:
+        inputs:
+            username:
+                description: 'Enter your name: (e.g.-> farhan)'
+                required: true
+    schedule:
+        - cron: '0 12 * * *'
+jobs:
+    minhaj-server:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check Server Health 📦
+              uses: JamesIves/fetch-api-data-action@releases/v1
+              with:
+                  ENDPOINT: http://server.minhaj.se/admin-be/api-event/booking
